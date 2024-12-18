@@ -43,6 +43,15 @@
       "attribute_name": "Tag",
       "attribute_value": "ZTNA-Windows-10-Client",
       "default_deploy_path": "NAM-1"
+    },
+    {
+      "use_existing": false,
+      "friendly_name": "app3",
+      "visible_name": "ZTNA-VYOS-Router",
+      "template_name": "VYOS-Router",
+      "attribute_name": "Tag",
+      "attribute_value": "ZTNA-VYOS-Router",
+      "default_deploy_path": "NAM-1"
     }
   ],
   "services_to_add": [
@@ -50,6 +59,7 @@
       "service_name": "VLAN Auto",
       "friendly_names": [
         "vlan1"
+        "vlan2"
       ]
     }
   ],
@@ -98,7 +108,39 @@
         "new": false,
         "verify": "resource_name_exists",
         "resource_type": "service",
+        "name": "vlan2",
+        "model": ""
+      }
+    },
+    {
+      "src": {
+        "new": true,
+        "verify": "",
+        "name": "app3",
+        "model": "",
+        "vnic": "2"
+      },
+      "dest": {
+        "new": false,
+        "verify": "resource_name_exists",
+        "resource_type": "service",
         "name": "vlan1",
+        "model": ""
+      }
+    },
+    {
+      "src": {
+        "new": true,
+        "verify": "",
+        "name": "app3",
+        "model": "",
+        "vnic": "3"
+      },
+      "dest": {
+        "new": false,
+        "verify": "resource_name_exists",
+        "resource_type": "service",
+        "name": "vlan2",
         "model": ""
       }
     }
@@ -117,10 +159,30 @@
     "resources": [],
     "apps_services": [
       {
-        "friendly_name": "app1",
-        "row": 0,
-        "col": 0
-      }
+                "friendly_name": "app3",
+                "row": 3,
+                "col": 0
+            },
+            {
+                "friendly_name": "app1",
+                "row": 3,
+                "col": 2
+            },
+            {
+                "friendly_name": "app2",
+                "row": 3,
+                "col": 6
+            },
+            {
+                "friendly_name": "vlan1",
+                "row": 3,
+                "col": 4
+            },
+            {
+                "friendly_name": "vlan2",
+                "row": 3,
+                "col": 4
+            }
     ]
   }
 }
