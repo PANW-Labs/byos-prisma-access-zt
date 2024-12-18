@@ -1,125 +1,126 @@
 {
-    "name": "ZTNA-Site",
-    "requirements": [
-        {
-            "verify": "exists_in_sandbox",
-            "resource_type": "service",
-            "name": "Mgmt-Network",
-            "model": ""
-        },
-        {
-            "verify": "exists_in_sandbox",
-            "resource_type": "service",
-            "name": "Egress-Network",
-            "model": ""
-        },
-        {
-            "use_existing": true,
-            "verify": "resource_name_exists",
-            "verify_attribute": true,
-            "attribute_name": "Tag",
-            "attribute_value": "byos-dc",
-            "resource_type": "resource",
-            "name": "Domain-controller",
-            "model": ""
-        }
-    ],
-    "resources_to_add": [],
-    "apps_to_add": [
-        {
-            "use_existing": false,
-            "friendly_name": "app1",
-            "visible_name": "ZTNA-Connector",
-            "template_name": "byos-ztna-connector",
-            "attribute_name": "Tag",
-            "attribute_value": "ZTNA-connector",
-            "default_deploy_path": "NAM-1"
-        },
-       {
-            "use_existing": false,
-            "friendly_name": "app2",
-            "visible_name": "ZTNA-Windows-10-Client",
-            "template_name": "Windows-10-client",
-            "attribute_name": "Tag",
-            "attribute_value": "ZTNA-Windows-10-Client",
-            "default_deploy_path": "NAM-1"
-        }
-      ],
-    "services_to_add": [
-        {
-            "service_name": "VLAN Auto",
-            "friendly_names": [
-                "vlan1"
-            ]
-        }
-    ],
-      "connections_to_add": [
-        {
-            "src": {
-                "new": true,
-                "verify": "",
-                "name": "app1",
-                "model": "",
-                "vnic": "2"
-            },
-            "dest": {
-                "new": false,
-                "verify": "resource_name_exists",
-                "resource_type": "service",
-                "name": "vlan1",
-                "model": ""
-            }
-        },
-        {
-            "src": {
-                "new": true,
-                "verify": "",
-                "name": "app1",
-                "model": "",
-                "vnic": "1"
-            },
-            "dest": {
-                "new": false,
-                "verify": "resource_name_exists",
-                "resource_type": "service",
-                "name": "Egress-Network",
-                "model": ""
-            }
-        },
-        {
-            "src": {
-                "new": true,
-                "verify": "",
-                "name": "app2",
-                "model": "",
-                "vnic": "1"
-            },
-            "dest": {
-                "new": false,
-                "verify": "resource_name_exists",
-                "resource_type": "service",
-                "name": "vlan1",
-                "model": ""
-            }
-    ],
+  "name": "ZTNA-Site",
+  "requirements": [
+    {
+      "verify": "exists_in_sandbox",
+      "resource_type": "service",
+      "name": "Mgmt-Network",
+      "model": ""
+    },
+    {
+      "verify": "exists_in_sandbox",
+      "resource_type": "service",
+      "name": "Egress-Network",
+      "model": ""
+    },
+    {
+      "use_existing": true,
+      "verify": "resource_name_exists",
+      "verify_attribute": true,
+      "attribute_name": "Tag",
+      "attribute_value": "byos-dc",
+      "resource_type": "resource",
+      "name": "Domain-controller",
+      "model": ""
+    }
+  ],
+  "resources_to_add": [],
+  "apps_to_add": [
+    {
+      "use_existing": false,
+      "friendly_name": "app1",
+      "visible_name": "ZTNA-Connector",
+      "template_name": "byos-ztna-connector",
+      "attribute_name": "Tag",
+      "attribute_value": "ZTNA-connector",
+      "default_deploy_path": "NAM-1"
+    },
+    {
+      "use_existing": false,
+      "friendly_name": "app2",
+      "visible_name": "ZTNA-Windows-10-Client",
+      "template_name": "Windows-10-client",
+      "attribute_name": "Tag",
+      "attribute_value": "ZTNA-Windows-10-Client",
+      "default_deploy_path": "NAM-1"
+    }
+  ],
+  "services_to_add": [
+    {
+      "service_name": "VLAN Auto",
+      "friendly_names": [
+        "vlan1"
+      ]
+    }
+  ],
+  "connections_to_add": [
+    {
+      "src": {
+        "new": true,
+        "verify": "",
+        "name": "app1",
+        "model": "",
+        "vnic": "2"
+      },
+      "dest": {
+        "new": false,
+        "verify": "resource_name_exists",
+        "resource_type": "service",
+        "name": "vlan1",
+        "model": ""
+      }
+    },
+    {
+      "src": {
+        "new": true,
+        "verify": "",
+        "name": "app1",
+        "model": "",
+        "vnic": "1"
+      },
+      "dest": {
+        "new": false,
+        "verify": "resource_name_exists",
+        "resource_type": "service",
+        "name": "Egress-Network",
+        "model": ""
+      }
+    },
+    {
+      "src": {
+        "new": true,
+        "verify": "",
+        "name": "app2",
+        "model": "",
+        "vnic": "1"
+      },
+      "dest": {
+        "new": false,
+        "verify": "resource_name_exists",
+        "resource_type": "service",
+        "name": "vlan1",
+        "model": ""
+      }
+    }
+  ],
   "layout": {
-        "start_resource": {
-            "verify": "exists_in_sandbox",
-            "resource_type": "service",
-            "name": "Mgmt-Network",
-            "model": ""
-        },
-        "x_offset": 360,
-        "y_offset": 0,
-        "x_gap": 320,
-        "y_gap": 80,
-        "resources": [],
-        "apps_services": [
-            {
-                "friendly_name": "app1",
-                "row": 0,
-                "col": 0
-            }
-        ]
-    
-  
+    "start_resource": {
+      "verify": "exists_in_sandbox",
+      "resource_type": "service",
+      "name": "Mgmt-Network",
+      "model": ""
+    },
+    "x_offset": 360,
+    "y_offset": 0,
+    "x_gap": 320,
+    "y_gap": 80,
+    "resources": [],
+    "apps_services": [
+      {
+        "friendly_name": "app1",
+        "row": 0,
+        "col": 0
+      }
+    ]
+  }
+}
