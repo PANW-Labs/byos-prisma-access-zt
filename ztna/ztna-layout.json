@@ -58,7 +58,7 @@
     {
       "service_name": "VLAN Auto",
       "friendly_names": [
-        "vlan1"
+        "vlan1",
         "vlan2"
       ]
     }
@@ -159,30 +159,30 @@
     "resources": [],
     "apps_services": [
       {
-                "friendly_name": "app3",
-                "row": 3,
-                "col": 0
-            },
-            {
-                "friendly_name": "app1",
-                "row": 3,
-                "col": 2
-            },
-            {
-                "friendly_name": "app2",
-                "row": 3,
-                "col": 6
-            },
-            {
-                "friendly_name": "vlan1",
-                "row": 3,
-                "col": 4
-            },
-            {
-                "friendly_name": "vlan2",
-                "row": 3,
-                "col": 4
-            }
+        "friendly_name": "app3",
+        "row": 3,
+        "col": 0
+      },
+      {
+        "friendly_name": "app1",
+        "row": 3,
+        "col": 2
+      },
+      {
+        "friendly_name": "app2",
+        "row": 3,
+        "col": 6
+      },
+      {
+        "friendly_name": "vlan1",
+        "row": 3,
+        "col": 4
+      },
+      {
+        "friendly_name": "vlan2",
+        "row": 3,
+        "col": 4
+      }
     ]
   }
 }
